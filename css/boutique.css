@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+    color: black;
+    background-color:white;
+   
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    position: absolute;
+    width: 100%;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    
+    
+    
+  }
+  
+  header .logo a{
+    font-family: "Inria Serif", serif;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+  }
+  
+  header nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  header nav ul li {
+    margin-left: 20px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+  }
+   .menu {
+    position: absolute;
+    top: 0;
+    left:0;
+    height: 100vh;
+    width: 30%; 
+    background-color: white ;
+    margin-left:-30%;
+    transition: 0.5s ease-out;
+    z-index: 10;
+    overflow-y: scroll;
+    scrollbar-width: none;
+  
+  }
+  .menu-active {
+    margin-left:0;
+  }
+   .menu .exit {
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    font-size: 25px;
+  }
+   .menu ul{
+    list-style: none;
+    
+    margin-top: 80px;
+    margin-left: 50px;
+    
+  }
+  .menu ul li {
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    height:80px;
+  }
+  a.main-nav-item1::after,
+a.main-nav-item2::after,
+a.main-nav-item3::after,
+a.main-nav-item4::after,
+a.main-nav-item5::after,
+a.main-nav-item6::after,
+a.main-nav-item7::after
+    {
+    content:"";
+    display: block;
+    position:relative;
+    width:100%;
+    height:2px;
+    background:#A0522D;
+    transform: scale(0);
+    transition:  transform 0.2s ease-in-out;
+}
+a.main-nav-item1:hover::after,
+a.main-nav-item2:hover::after,
+a.main-nav-item3:hover:after,
+a.main-nav-item4:hover::after,
+a.main-nav-item5:hover::after,
+a.main-nav-item6:hover::after,
+a.main-nav-item7:hover::after{
+    transform: scale(1);
+    
+}
+.main-nav-item:hover{
+  color:#A0522D;
+}
+.page-active .filter {
+  filter: blur(20px); 
+
+}
+body.no-scroll {
+  overflow: hidden; 
+}
+
+main {
+  padding-top: 5%;
+}
+.container {
+  margin-top: 50px;
+}
+.main-text h2 {
+font-size:2rem;
+margin-bottom:10px;
+text-align: center;
+}
+.container-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(150px,auto));
+  gap: 2rem;
+  align-items: center;
+  margin-top:4rem;
+  padding: 2%;
+  position: sticky;
+}
+
+.c-mainbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.4rem;
+ border-radius: 10px;
+ height: 90px;
+ background-color: white;
+box-shadow: rgba(17, 12, 46, .15) 0px 48px 100px 0px;
+}
+.c-mainbox img {
+  width: 50px;
+}
+.container-text p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: black;
+}
+.c-mainbox:hover {
+  background-color: rgba(181, 180, 184, 0.15);
+  transform:translateY(-7px);
+  cursor: pointer;
+  transition:0.3s;
+}
+
+.main-shop {
+  padding-top: 5%;
+}
+.shop-contenneur {
+  
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px,auto));
+    gap: 2rem;
+    align-items: center;
+    cursor: pointer;
+    padding:5%;
+}
+.produits img {
+   
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+ 
+
+}
+.produits {
+    transition: all .40s ease;
+}
+
+.info-produit {
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    padding: 15px 0;
+}
+.title-produit h4{
+    font-size: 18px;
+
+}
+.prix-produit h5{
+    color:gray;
+    font-size:16px;
+}
+.produits p {
+    color: #858585;
+    font-size: 15px;
+    line-height: 30px;
+    margin-bottom:15px;
+}
+ .main-title h3{
+padding-top:5%;
+text-align:center;
+font-size:1.8rem;
+padding-bottom:4%;
+}
+.bottom-line {
+    
+    width:350px;
+    border-top:2px solid  black;
+} 
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modele {
+  position: relative;
+}
+.modele .overlay-image {
+  display: none;
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 98%;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.3); 
+  z-index: 1; 
+}
+.modele .overlay-image-active {
+  display: block;
+}
+.produits .btn  {
+  display: none;
+   position: absolute;
+   margin-left: -50px;
+   margin-top: 10px;
+   padding: 10px;   
+   border-color: transparent;
+   border-radius: 20px;
+   z-index: 2;
+}
+.produits .btn-active {
+  display: inline;
+}
+
+.produits .btn  ion-icon {
+    font-size: 20px;
+    color: black;
+  
+}
+.commander {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+.commander button {
+    border-radius: 10px;
+    color:black;
+    border: transparent;
+    height:40px;
+    width: 40%;
+    
+}
+.commander #btn2 {
+  background-color: black;
+  color: white;
+  width: 55%;
+}
+.commander button.active { 
+     background-color: rgb(17, 135, 17);
+    
+}
+.commander button.active:hover{
+  background-color: rgb(9, 86, 9);
+}
+.commander button:hover {
+  background-color: black;
+  color:white;
+}
+footer {
+  padding: 50px 15% 40px;
+ background:linear-gradient( rgb(0,0,0) , rgb(62,62,64));
+}
+.main-contact {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(150px, auto));
+  justify-content: center;
+  gap: 2rem;
+  padding:5%;
+  border-radius: 10px;
+}
+.contact-contenent h4 {
+  font-size: 20px;
+  color:white;
+  margin-bottom: 1.5rem;
+}
+.contact-contenent li {
+  margin-bottom: 16px;
+}
+.contact-contenent li a {
+  display: block;
+  color:white;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all .40s ease;
+  text-decoration: none;
+
+}
+.contact-contenent li a:hover {
+transform: translateX(10px);
+opacity: 0.5;
+}
+@media (max-width: 775px) {
+
+  .menu {
+   width: 50%;
+   margin-left:-50%;
+  }
+  .menu-active {
+   margin-left:0;
+ }
+ }
+ 
+ @media (max-width: 450px) {
+  .contact-container {
+    margin-top: 15%;
+    width:300px;
+  }
+    .menu {
+     width: 100%;
+     margin-left:-100%;
+    }
+    .menu-active {
+     margin-left:0;
+   } 
+   header .logo a {
+    font-size: 16px;
+  }
+ } 
